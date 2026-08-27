@@ -30,7 +30,7 @@ export default function ScrollReveal({ children, className = "", delay = 0 }: Sc
       observer.observe(ref.current);
     }
 
-    return () => observer.observerId && observer.disconnect();
+    return () => observer.disconnect();
   }, []);
 
   return (
