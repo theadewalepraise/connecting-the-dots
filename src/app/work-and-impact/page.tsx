@@ -33,6 +33,28 @@ export default function WorkAndImpact() {
         <div className="absolute top-[-50%] left-[-10%] w-[120%] h-[200%] bg-gradient-to-br from-brand-blue via-brand-blue to-[#001a33] -z-0 transform -rotate-6"></div>
       </section>
 
+      {/* NEW: Career Lighthouse Video Section */}
+      <section className="pt-16 px-6 max-w-4xl mx-auto relative z-20">
+        <ScrollReveal delay={200}>
+          <div className="bg-white p-4 md:p-8 rounded-3xl shadow-[0_15px_40px_-10px_rgba(179,0,89,0.12)] border border-gray-100">
+            <h2 className="text-2xl font-bold text-brand-blue mb-6 text-center">
+              The Career Lighthouse Concept
+            </h2>
+            <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-inner bg-black">
+              <video 
+                controls 
+                preload="metadata"
+                className="w-full h-full object-cover"
+              >
+                {/* Make sure your video is named 'career-lighthouse.mp4' in the public folder */}
+                <source src="/career-lighthouse.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
       {/* Key Projects & Achievements */}
       <section className="py-24 px-6 max-w-6xl mx-auto">
         <ScrollReveal delay={0}>
