@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
+import VideoPopup from "@/components/VideoPopup";
 
 export default function Home() {
   return (
@@ -73,6 +74,8 @@ export default function Home() {
           
         </div>
       </section>
+
+      <VideoPopup/>
 
       {/* Key Highlights Section */}
       <section className="py-20 bg-gray-50 px-6">
