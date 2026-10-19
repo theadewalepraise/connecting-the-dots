@@ -47,7 +47,7 @@ export default function WorkAndImpact() {
                 className="w-full h-full object-cover"
               >
                 {/* Make sure your video is named 'career-lighthouse.mp4' in the public folder */}
-                <source src="/career-lighthouse.mp4" type="video/mp4" />
+                <source src="/career-lighthouse.mp4.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

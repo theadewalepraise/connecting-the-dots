@@ -47,7 +47,7 @@ export default function VideoPopup() {
           muted 
           className="w-full h-full object-cover"
         >
-          <source src="/career-lighthouse.mp4" type="video/mp4" />
+          <source src="/career-lighthouse.mp4.mp4" type="video/mp4" />
         </video>
       </div>
     </div>
