@@ -22,6 +22,6 @@ export const structure: StructureResolver = (S) =>
         ]),
       ),
       ...S.documentTypeListItems().filter(
-        (item) => item.getId() && !['post', 'category', 'author', 'socialPost', 'socialAccount', 'socialSettings'].includes(item.getId()!),
+        (item) => item.getId() && !['post', 'category', 'author', 'socialPost', 'socialAccount', 'socialSettings', 'socialConnectionRequest'].includes(item.getId()!),
       ),
     ])
