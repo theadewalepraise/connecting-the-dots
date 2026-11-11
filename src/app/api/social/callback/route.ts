@@ -32,7 +32,7 @@ export async function GET(request: NextRequest) {
     const ticket = randomBytes(32).toString('hex')
     await storeEncryptedTemporary('social:oauth-pending:' + ticket, {candidates})
     const response = backToStudio(request, undefined, ticket)
-    response.cookies.delete('social_oauth_state')
+    response.cookies.set('social_oauth_state', '', {maxAge: 0, path: '/api/social'})
     response.cookies.set('social_oauth_ticket', ticket, {
       httpOnly: true, sameSite: 'lax', secure: request.nextUrl.protocol === 'https:',
       path: '/api/social', maxAge: 600,
