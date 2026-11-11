@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
       ...(candidate.expiresAt ? {tokenExpiresAt: candidate.expiresAt} : {}),
     })
     const response = NextResponse.json({success: true})
-    response.cookies.delete('social_oauth_ticket')
+    response.cookies.set('social_oauth_ticket', '', {maxAge: 0, path: '/api/social'})
     return response
   } catch {
     return NextResponse.json({error: 'Unable to save account connection'}, {status: 503})
