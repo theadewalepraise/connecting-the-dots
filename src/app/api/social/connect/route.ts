@@ -23,10 +23,15 @@ export async function GET(request: NextRequest) {
   }
 
   try {
+    // OAuth cookies must be set on the same origin as the registered callback URL.
+    if (new URL(process.env.SOCIAL_PUBLIC_BASE_URL || 'https://invalid.example').origin !== request.nextUrl.origin) {
+      return NextResponse.json({error: 'Use the configured social connection domain'}, {status: 400})
+    }
     const client = sanityWriter()
     const challenge = await client.getDocument<ConnectionRequest>(requestId)
     if (!challenge || (challenge.provider !== 'meta' && challenge.provider !== 'linkedin') ||
         challenge.consumedAt || !challenge.expiresAt ||
+        !Number.isFinite(Date.parse(challenge.expiresAt)) ||
         Date.parse(challenge.expiresAt) < Date.now() ||
         Date.parse(challenge.expiresAt) > Date.now() + 5 * 60_000 ||
         !/^[a-f0-9]{64}$/i.test(challenge.nonceHash)) {
