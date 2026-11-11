@@ -70,6 +70,21 @@ export const postType = defineType({
       description: 'If this is a LinkedIn post, paste the link here. When users click the article, it will take them directly to LinkedIn. (You can leave the Body empty if you use this).',
     }),
     defineField({
+      name: 'socialSharing',
+      title: 'Social Sharing',
+      type: 'object',
+      description: 'Preferences for social posts generated from this article. No automatic publishing is active yet.',
+      fields: [
+        defineField({name: 'enabled', title: 'Prepare Social Posts', type: 'boolean', initialValue: false}),
+        defineField({name: 'platforms', type: 'array', of: [{type: 'string', options: {list: [
+          {title: 'Facebook', value: 'facebook'},
+          {title: 'Instagram', value: 'instagram'},
+          {title: 'LinkedIn', value: 'linkedin'},
+        ]}}], validation: (Rule) => Rule.unique()}),
+        defineField({name: 'approvalRequired', title: 'Require Approval', type: 'boolean', initialValue: true}),
+      ],
+    }),
+    defineField({
       name: 'articlePdf',
       title: 'Upload Article Documents (Optional)',
       type: 'file',
