@@ -13,6 +13,7 @@ import {apiVersion, dataset, projectId} from './src/sanity/env'
 import {schema} from './src/sanity/schemaTypes'
 import {structure} from './src/sanity/structure'
 import {SocialConnectionsTool} from './src/sanity/tools/SocialConnectionsTool'
+import {ManualShareTool} from './src/sanity/tools/ManualShareTool'
 
 export default defineConfig({
   basePath: '/studio',
@@ -20,7 +21,10 @@ export default defineConfig({
   dataset,
   // Add and edit the content schema in the './sanity/schemaTypes' folder
   schema,
-  tools: [{name: 'social-connections', title: 'Social Connections', component: SocialConnectionsTool}],
+  tools: [
+    {name: 'social-connections', title: 'Social Connections', component: SocialConnectionsTool},
+    {name: 'facebook-manual-share', title: 'Share to Facebook Profile', component: ManualShareTool},
+  ],
   plugins: [
     structureTool({structure}),
     // Vision is for querying with GROQ from inside the Studio
