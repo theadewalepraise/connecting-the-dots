@@ -45,9 +45,9 @@ export default function CareerLighthousePage() {
         <h2 id="presentation" className="mb-5 text-2xl font-bold text-brand-blue md:text-3xl">The Career Lighthouse Concept</h2>
         <div className="overflow-hidden rounded-2xl border border-stone-200 bg-black shadow-lg">
           <video controls playsInline preload="metadata" poster="/projects/career-lighthouse/thumbnail" className="aspect-video w-full object-contain" aria-label="Career Lighthouse concept presentation">
-            <source src="/career-lighthouse.mp4.mp4" type="video/mp4" />
+            <source src="/career-lighthouse.mp4" type="video/mp4" />
             Your browser does not support video playback.
-            <a href="/career-lighthouse.mp4.mp4">Open the video file</a>.
+            <a href="/career-lighthouse.mp4">Open the video file</a>.
           </video>
         </div>
         <p className="mt-3 text-sm text-stone-600">Select play and ensure your sound is on to hear the narration.</p>
