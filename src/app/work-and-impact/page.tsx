@@ -55,7 +55,7 @@ export default function WorkAndImpact() {
             </div>
             <div className="mt-6 text-center">
               <Link href="/projects/career-lighthouse" className="inline-flex rounded-md border border-brand-blue px-5 py-3 font-semibold text-brand-blue transition hover:bg-brand-blue hover:text-brand-white">
-                View and share Career Lighthouse
+                View Project
               </Link>
             </div>
           </div>
