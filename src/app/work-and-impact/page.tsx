@@ -44,12 +44,19 @@ export default function WorkAndImpact() {
               <video 
                 controls 
                 preload="metadata"
-                className="w-full h-full object-cover"
+                playsInline
+                poster="/projects/career-lighthouse/thumbnail"
+                className="w-full h-full object-contain"
               >
                 {/* Make sure your video is named 'career-lighthouse.mp4' in the public folder */}
                 <source src="/career-lighthouse.mp4.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+            </div>
+            <div className="mt-6 text-center">
+              <Link href="/projects/career-lighthouse" className="inline-flex rounded-md border border-brand-blue px-5 py-3 font-semibold text-brand-blue transition hover:bg-brand-blue hover:text-brand-white">
+                View and share Career Lighthouse
+              </Link>
             </div>
           </div>
         </ScrollReveal>
